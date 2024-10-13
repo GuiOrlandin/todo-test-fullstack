@@ -36,11 +36,12 @@ export const LoginButton = styled.button`
   border-radius: 8px;
   color: white;
   margin-bottom: 0.5rem;
-  background: linear-gradient(
-    90deg,
-    rgba(122, 74, 163, 1) 0%,
-    rgba(146, 80, 210, 1) 100%
-  );
+  background: #160548;
+
+  &:hover {
+    cursor: pointer;
+    background: #413072;
+  }
 `;
 export const RegisterButton = styled.button`
   padding: 0.5rem;
@@ -52,4 +53,9 @@ export const RegisterButton = styled.button`
     rgba(122, 74, 163, 1) 0%,
     rgba(146, 80, 210, 1) 100%
   );
+
+  &:hover {
+    cursor: pointer;
+    background: #cdc3ea;
+  }
 `;

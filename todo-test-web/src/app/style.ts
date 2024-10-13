@@ -20,28 +20,6 @@ export const HomeHeader = styled.header`
     font-size: 1.7rem;
   }
 `;
-export const CreateTaskButton = styled.button`
-  display: flex;
-  padding: 1rem;
-  width: 100%;
-  margin-top: 2rem;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  border: none;
-  border-radius: 8px;
-
-  background: linear-gradient(
-    90deg,
-    rgba(122, 74, 163, 1) 0%,
-    rgba(146, 80, 210, 1) 100%
-  );
-
-  &:hover {
-    cursor: pointer;
-    background: #cdc3ea;
-  }
-`;
 
 export const TaskContainer = styled.div`
   display: flex;
@@ -52,4 +30,9 @@ export const TaskContainer = styled.div`
   align-items: center;
   border: 2px solid #d7dde9;
   padding: 2rem;
+  gap: 1rem;
+
+  p {
+    font-weight: bold;
+  }
 `;

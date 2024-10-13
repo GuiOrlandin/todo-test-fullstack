@@ -47,11 +47,12 @@ export class TaskController {
     @Body() body: EditTaskBody,
     @Request() request: AuthRequestModel,
   ) {
-    const { content, task_id } = body;
+    const { content, task_id, completed } = body;
 
     const task = await this.editTaskUseCase.execute({
       content,
       task_id,
+      completed,
       user_id: request.user.id,
     });
 

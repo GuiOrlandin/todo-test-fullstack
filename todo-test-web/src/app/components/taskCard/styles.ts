@@ -2,7 +2,18 @@
 
 import styled from "styled-components";
 
-export const TaskCardContainer = styled.div`
+export const TaskContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  width: 35rem;
+  border-radius: 8px;
+  align-items: center;
+  border: 2px solid #d7dde9;
+  padding: 2rem;
+`;
+
+export const TaskCardContent = styled.div`
   display: flex;
   width: 100%;
   padding: 1rem;

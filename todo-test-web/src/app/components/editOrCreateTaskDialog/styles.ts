@@ -16,7 +16,7 @@ export const Content = styled(Dialog.Content)`
   min-width: 16rem;
   border-radius: 6px;
   padding: 2rem 2rem 1.2rem 2rem;
-  background: #f0edf6;
+  background: white;
   min-width: 25rem;
 
   position: fixed;
@@ -32,9 +32,18 @@ export const CloseAndSaveChangesButtonsContainer = styled.div`
 `;
 export const CloseButton = styled.button`
   color: white;
-  padding: 0.7rem;
+  padding: 1rem 3.5rem;
   border: none;
   border-radius: 8px;
+  background: #85888c;
+
+  &:hover {
+    cursor: pointer;
+    background: #e1e8f6;
+  }
+`;
+
+export const SaveButton = styled(CloseButton)`
   background: linear-gradient(
     90deg,
     rgba(122, 74, 163, 1) 0%,
@@ -42,11 +51,11 @@ export const CloseButton = styled.button`
   );
 
   &:hover {
-    cursor: pointer;
+    background: #cdc3ea;
   }
 `;
 
-export const SaveButton = styled(CloseButton)``;
+export const CreateButton = styled(SaveButton)``;
 
 export const TriggerDialogButton = styled.button`
   background: none;
@@ -66,9 +75,33 @@ export const InputAndLabelContainer = styled.div`
   }
 
   input {
-    padding: 0.5rem;
+    padding: 1rem;
     border-radius: 8px;
-    border: none;
+    border: 1px solid #e1e8f6;
+
     margin-top: 0.5rem;
+  }
+`;
+
+export const CreateTaskButton = styled.button`
+  display: flex;
+  padding: 1rem 5rem;
+  width: 100%;
+  margin-top: 2rem;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(122, 74, 163, 1) 0%,
+    rgba(146, 80, 210, 1) 100%
+  );
+
+  &:hover {
+    cursor: pointer;
+    background: #cdc3ea;
   }
 `;

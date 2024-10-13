@@ -1,24 +1,60 @@
-import { EditAndDeleteButtonsContainer, TaskCardContainer } from "./styles";
+"use client";
+
+import {
+  EditAndDeleteButtonsContainer,
+  TaskCardContent,
+  TaskContainer,
+} from "./styles";
 
 import { Task } from "@/app/page";
-import EditTaskDialog from "../editTaskDialog";
 import DeleteTaskDialog from "../deleteTaskDialog";
+import EditOrCreateTaskDialog from "../editOrCreateTaskDialog";
+import { EditTaskPut } from "@/hooks/editTaskFetch";
+import { useEffect, useState } from "react";
 
 interface TaskProps {
-  removeTask?: (task: Task) => void;
-  task: Task;
+  deleteTask: () => void;
+  editTask: (content: string) => void;
+  checkBox: (completed: boolean) => void;
+  task?: Task;
+  token: string;
 }
 
-export default function TaskCard({ task, removeTask }: TaskProps) {
+export default function TaskCard({
+  task,
+  deleteTask,
+  editTask,
+  checkBox,
+}: TaskProps) {
+  const [checkboxToggle, setCheckboxToggle] = useState<boolean>(
+    task!.completed
+  );
+
+  useEffect(() => {
+    checkBox(checkboxToggle);
+  }, [checkboxToggle]);
+
   return (
-    <TaskCardContainer>
-      <input id={task.id} type="checkbox" checked={task.completed} />
-      <label htmlFor={task.id}>{task.content}</label>
+    <TaskCardContent>
+      <input
+        id={task!.id}
+        type="checkbox"
+        checked={task?.completed}
+        onChange={() => setCheckboxToggle(!checkboxToggle)}
+      />
+      <label htmlFor={task!.id}>{task!.content}</label>
 
       <EditAndDeleteButtonsContainer>
-        <EditTaskDialog task_id={task.id} />
-        <DeleteTaskDialog task_id={task.id} />
+        <EditOrCreateTaskDialog
+          task_id={task!.id}
+          dialogType="edit"
+          editTask={(content: string) => editTask!(content)}
+        />
+        <DeleteTaskDialog
+          task_id={task!.id}
+          deleteTask={() => deleteTask()}
+        />
       </EditAndDeleteButtonsContainer>
-    </TaskCardContainer>
+    </TaskCardContent>
   );
 }

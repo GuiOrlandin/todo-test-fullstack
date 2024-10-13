@@ -17,7 +17,7 @@ export const Content = styled(Dialog.Content)`
   text-align: center;
   border-radius: 6px;
   padding: 2rem 2rem 1.2rem 2rem;
-  background: #f0edf6;
+  background: white;
   min-width: 25rem;
 
   position: fixed;
@@ -37,17 +37,14 @@ export const TriggerDialogButton = styled.button`
 
 export const CloseButton = styled.button`
   color: white;
-  padding: 0.7rem;
+  padding: 1rem 3.5rem;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(
-    90deg,
-    rgba(122, 74, 163, 1) 0%,
-    rgba(146, 80, 210, 1) 100%
-  );
+  background: #85888c;
 
   &:hover {
     cursor: pointer;
+    background: #e1e8f6;
   }
 `;
 
@@ -55,6 +52,7 @@ export const DeleteButton = styled.button`
   color: white;
   padding: 0.7rem;
   border: none;
+  padding: 1rem 3.5rem;
   border-radius: 8px;
   background: linear-gradient(
     90deg,
@@ -63,6 +61,7 @@ export const DeleteButton = styled.button`
   );
   &:hover {
     cursor: pointer;
+    background: #ec6851;
   }
 `;
 

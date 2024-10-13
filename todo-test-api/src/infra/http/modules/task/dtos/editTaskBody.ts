@@ -1,9 +1,13 @@
-import { IsString, IsNotEmpty } from 'class-validator';
+import { IsString, IsNotEmpty, IsBoolean, IsOptional } from 'class-validator';
 
 export class EditTaskBody {
-  @IsNotEmpty()
   @IsString()
+  @IsOptional()
   content: string;
+
+  @IsBoolean()
+  @IsOptional()
+  completed: boolean;
 
   @IsNotEmpty()
   @IsString()

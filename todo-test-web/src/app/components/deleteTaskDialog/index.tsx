@@ -13,13 +13,14 @@ import { FaRegTrashCan } from "react-icons/fa6";
 
 interface EditTaskDialogProps {
   task_id: string;
+  deleteTask: () => void;
 }
 
-export default function DeleteTaskDialog({ task_id }: EditTaskDialogProps) {
+export default function DeleteTaskDialog({ deleteTask }: EditTaskDialogProps) {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <TriggerDialogButton>
+        <TriggerDialogButton data-testid="delete-task-button">
           <FaRegTrashCan size={22} color="#9EA5B4" />
         </TriggerDialogButton>
       </Dialog.Trigger>
@@ -30,7 +31,7 @@ export default function DeleteTaskDialog({ task_id }: EditTaskDialogProps) {
 
           <CloseAndSaveChangesButtonsContainer>
             <Dialog.Close asChild>
-              <DeleteButton>Deletar</DeleteButton>
+              <DeleteButton onClick={() => deleteTask()}>Deletar</DeleteButton>
             </Dialog.Close>
             <Dialog.Close asChild>
               <CloseButton>Fechar</CloseButton>
